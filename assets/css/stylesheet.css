@@ -1,0 +1,233 @@
+@font-face {
+  font-family: "PixelEmulator";
+  src: url("../font/pixel-emulator.otf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Patrick Hand SC', cursive;
+  background-color: #fff;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 40px;
+}
+
+
+
+.description,
+.contact {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  justify-content: space-around;
+}
+
+.description img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.description h1 {
+  font-size: 4vw;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.description h2 {
+  font-size: 3vw;
+  text-align: center;
+  font-weight: 800;
+}
+
+.controls {
+  margin: 20px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  padding: 10px;
+  width: 90%;
+  max-width: 400px;
+
+}
+
+.controls h2 {
+  font-size: 24px;
+  text-align: center;
+}
+
+.controls h3 {
+  font-size: 18px;
+  margin: 5px 0;
+  text-align: center;
+}
+
+div#mute-button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../images/muted.png');
+}
+
+div#mute-button:focus {
+  outline: none;
+}
+
+div#mute-button.muted {
+  background-image: url('../images/speaker.png');
+}
+
+.links h2 {
+  text-align: center;
+  font-size: 28px;
+  margin: 15px;
+}
+
+img#github,
+img#linkedin {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 10px;
+  border: 3px solid #000;
+}
+
+canvas {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  border-radius: 10px;
+  border: 10px solid #000;
+  display: block;
+  margin: auto;
+  user-select: none;
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4rem;
+  margin-top: auto;
+  padding-bottom: 20px;
+}
+
+#controls button {
+  width: 10rem;
+  height: 5rem;
+  font-size: 24px;
+  border: 4px solid #000;
+  background-color: #ffcc00;
+  color: #000;
+  font-family: 'PixelEmulator', sans-serif;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0 #000;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  touch-action: manipulation;
+
+}
+
+
+#controls button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+  background-color: #ffaa00;
+}
+
+
+
+#jump-button {
+  width: 12rem;
+  height: 80px;
+  font-size: 32px;
+  background-color: #ffd966;
+}
+
+
+#controls button:active {
+  background-color: #ccc;
+}
+
+#controls button:active {
+  background-color: #ccc;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.logo-img {
+  width: 150px;
+  /* ajusta según necesites */
+  height: auto;
+}
+
+.banco-desc {
+  margin-top: 15px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgb(0, 134, 201);
+  text-shadow: 2px 2px 0 #000;
+  font-family: 'PixelEmulator', sans-serif;
+  /* o cualquier fuente pixel retro */
+  text-align: center;
+  animation: blink 1.2s infinite;
+  letter-spacing: 1px;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+
+
+@media (max-width: 600px) {
+
+  .description h1,
+  .description h2 {
+    font-size: 6vw;
+  }
+
+  #controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  canvas {
+    width: 100%;
+    max-width: 100%;
+    border-width: 6px;
+  }
+}
