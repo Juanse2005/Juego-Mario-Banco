@@ -62,7 +62,7 @@ Gemfile.lock
 /.bundle/
 /vendor/bundle
 /lib/bundler/man/
-
+/dist
 
 ### Rails ###
 

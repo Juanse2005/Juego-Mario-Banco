@@ -1,29 +1,40 @@
 {
-  "name": "mario_js",
+  "name": "mario_banco_occidente",
   "version": "1.0.0",
-  "description": "Super Mario Bros Level 1-1 in JS",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
+  "description": "Super Mario Bros",
+  "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --progress --colors --watch",
-    "build": "webpack"
-
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/tylerreichle/mario_js.git"
+    "build": "webpack",
+    "watch": "webpack --progress --colors --watch",
+    "start": "npm run build && electron .",
+    "dist": "npm run build && electron-builder",
+    "obfuscate": "javascript-obfuscator ./dist/bundle.js --output ./dist/bundle.js --compact true --self-defending true"
   },
   "keywords": [],
-  "author": "Tyler Reichle",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tylerreichle/mario_js/issues"
-  },
-  "homepage": "https://github.com/tylerreichle/mario_js#readme",
   "dependencies": {
     "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "electron": "^36.4.0",
+    "electron-builder": "^26.0.12",
+    "javascript-obfuscator": "^4.1.1"
+  },
+  "build": {
+    "appId": "com.supermario.game",
+    "productName": "SuperMarioGame",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!node_modules/*/{test,__tests__}/**",
+      "!**/*.map"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "publish": null
   }
 }

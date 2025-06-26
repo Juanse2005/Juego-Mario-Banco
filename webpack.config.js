@@ -24,7 +24,8 @@ plugins = plugins.concat(
 module.exports = {
   entry: './lib/game.js',
   output: {
-    filename: './assets/javascripts/bundle.js',
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist')
   },
   plugins: plugins,
   module: {
